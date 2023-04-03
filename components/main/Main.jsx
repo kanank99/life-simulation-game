@@ -16,7 +16,7 @@ import { Relationships } from './relationships/Relationships'
 
 const Main = (props) => {
 
-    // For Rendering
+    // For Rendering  //
     const [showIdentity, setIdentity] = useState(true);
     const [showRecreation, setRecreation] = useState(false);
     const [showRelationships, setRelationships] = useState(false);
@@ -50,15 +50,26 @@ const Main = (props) => {
         <View style={styles.headerAndContentAndNav}>
             <Stack.Screen 
                 options={ {
-                    header: () => (<Header />),
+                    header: () => (<Header 
+                            debitBalance={props.debitBalance}
+                            savingsBalance={props.savingsBalance}
+                    />),
                 }}
             />
-            {showIdentity ? <Identity /> : null}
+            {showIdentity ? <Identity
+                firstName={props.firstName}
+             /> : null}
             {showRelationships ? <Relationships /> : null}
             {showRecreation ? <Recreation /> : null}
             {showHealth ? <Health /> : null}
             {showCareer ? <Career /> : null}
-            {showBank ? <Bank /> : null}
+            {showBank ? <Bank 
+                firstName={props.firstName}
+                debitBalance={props.debitBalance}
+                setDebitBalance={props.setDebitBalance}
+                savingsBalance={props.savingsBalance}
+                setSavingsBalance={props.setSavingsBalance}
+            /> : null}
 
             <Navigation
             showIdentity={showIdentity}

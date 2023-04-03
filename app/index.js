@@ -14,7 +14,7 @@ export default function Page() {
   const [startLife, setStartLife] = useState(false);
 
   // For <NewLife />
-  const [firstName, onChangeFirst] = useState('');
+  const [firstName, onChangeFirst] = useState('Kanan');
   const [lastName, onChangeLast] = useState('');
   const [isMale, setMale] = useState(false);
   const [isFemale, setFemale] = useState(false);
@@ -23,6 +23,9 @@ export default function Page() {
   const [isBi, setBi] = useState(false);
   const [genderHeader, setGenderHeader] = useState('');
   const [sexHeader, setSexHeader] = useState('');
+
+  const [debitBalance, setDebitBalance] = useState(2000);
+  const [savingsBalance, setSavingsBalance] = useState(1000);
 
 
   return (
@@ -45,6 +48,10 @@ export default function Page() {
     setGenderHeader={setGenderHeader}
     sexHeader={sexHeader}
     setSexHeader={setSexHeader}
+    debitBalance={debitBalance}
+    setDebitBalance={setDebitBalance}
+    savingsBalance={savingsBalance}
+    setSavingsBalance={setSavingsBalance}
 
      /> : <Newlife start={setStartLife}
     firstName={firstName}

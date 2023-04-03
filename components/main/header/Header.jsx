@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, Image, Pressable } from "react-native";
 import { styles } from "./header.style";
 import ProgressBarAnimated from 'react-native-progress-bar-animated';
+import AnimateNumber from 'react-native-animate-number'
 
 const Header = (props) => {
 
@@ -15,7 +16,11 @@ return (
                                 height: 20,
                         }} source = {require('../icons/happiness.png')} 
                     />
-                    <Text style={styles.happinessText}>100%</Text>
+                    <Text style={styles.happinessText}><AnimateNumber value={100} 
+                    formatter={(val) => {
+                        return parseFloat(val).toFixed(0)
+                    }}/>
+                    %</Text>
                 </View>
                 <View style={styles.statsHealth}>
                     <Image style={{
@@ -23,7 +28,11 @@ return (
                                 height: 20,
                         }} source = {require('../icons/health.png')} 
                     />
-                    <Text style={styles.healthText}>100%</Text>
+                    <Text style={styles.healthText}><AnimateNumber value={100} 
+                    formatter={(val) => {
+                        return parseFloat(val).toFixed(0)
+                    }}/>
+                    %</Text>
                 </View>
                 <View style={styles.statsMentalHealth}>
                     <Image style={{
@@ -31,7 +40,11 @@ return (
                                 height: 20,
                         }} source = {require('../icons/mentalhealth.png')} 
                     />
-                    <Text style={styles.mentalHealthText}>100%</Text>
+                    <Text style={styles.mentalHealthText}><AnimateNumber value={100} 
+                    formatter={(val) => {
+                        return parseFloat(val).toFixed(0)
+                    }}
+                    />%</Text>
                 </View>
             </View>
             <View style={styles.ageContainer}>
@@ -42,10 +55,28 @@ return (
                 height={12}
                 value={41}
                 backgroundColorOnComplete="red"
+                backgroundColor="#6CC644"
                 // backgroundColorOnComplete="#6CC644"
                 />
             </View>
-            <Text style={styles.money}>$3278</Text>
+            <View style={styles.moneyBox}>
+                <View>
+                    <Text style={styles.moneyText}>Debit</Text>
+                    <Text style={styles.money}><AnimateNumber value={props.debitBalance} 
+                        formatter={(val) => {
+                            return '$ ' + parseFloat(val).toFixed(2)
+                        }}/>
+                    </Text>
+                </View>
+                <View>
+                    <Text style={styles.moneyText}>Savings</Text>
+                    <Text style={styles.money}><AnimateNumber value={props.savingsBalance} 
+                        formatter={(val) => {
+                            return '$ ' + parseFloat(val).toFixed(2)
+                        }}/>
+                    </Text>
+                </View>
+            </View>
         </View>
     </View>
     )

@@ -138,12 +138,3 @@ return (
   }
   
   export { Navigation };
-
-  /* 
-            setIdentity={setIdentity}
-            setRecreation={setRecreation}
-            setRelationships={setRelationships}
-            setCareer={setCareer}
-            setHealth={setHealth}
-            setBank={setBank}
-  */

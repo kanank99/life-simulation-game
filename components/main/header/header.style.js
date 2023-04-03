@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     },
     statsContainer: {
         flex: 1,
-        gap: 4,
+        gap: 6,
     },
     statsHappiness: {
         flexDirection: 'row',
@@ -37,47 +37,66 @@ const styles = StyleSheet.create({
     },
     happinessText: {
         color: '#FAFAFC',
+        fontSize: 16,
     },
     healthText: {
         color: '#FAFAFC',
+        fontSize: 16,
     },
     mentalHealthText: {
         color: '#FAFAFC',
+        fontSize: 16,
     },
     ageContainer: {
         flex: 1.3,
         alignItems: 'center',
-        borderLeftWidth: 1,
-        borderLeftColor: 'white',
-        borderRightWidth: 1,
-        borderRightColor: 'white',
+        justifyContent: 'center',
+        gap: 4,
+        height: '100%',
     },
     ageText: {
         textAlign: 'center',
         color: '#FAFAFC',
-        fontSize: 27,
-        fontWeight: 900,
+        fontSize: 23,
+        fontWeight: 800,
         textShadowColor: 'red',
-        textShadowOffset: {width: 1, height: 1},
-        textShadowRadius: 0,
+        letterSpacing: 1,
+        // textShadowOffset: {width: 1, height: 1},
+        // textShadowRadius: 0,
     },
     age: {
         textAlign: 'center',
         color: '#FAFAFC',
-        fontSize: 34,
-        textShadowColor: 'red',
+        fontSize: 30,
+        fontWeight: 400,
+        textShadowColor: '#000',
         textShadowOffset: {width: 1, height: 1},
         textShadowRadius: 0,
     },
-    money: {
+    moneyBox: {
         flex: 1,
+        justifyContent: 'center',
+        gap: 4,
+        height: '100%',
+    },
+    money: {
         textAlign: 'right',
         color: '#FAFAFC',
-        fontSize: 30,
+        fontSize: 20,
         textShadowColor: 'green',
         textShadowOffset: {width: 2, height: 2},
         textShadowRadius: 0,
-    }
+    },
+    moneyText: {
+        textAlign: 'right',
+        color: '#FAFAFC',
+        fontSize: 16,
+        // textShadowColor: 'green',
+        // textShadowOffset: {width: 2, height: 2},
+        // textShadowRadius: 0,
+        fontWeight: 200,
+        letterSpacing: 0.5,
+    },
   });
   
   export { styles };
