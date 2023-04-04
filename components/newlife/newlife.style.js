@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
         fontSize: 27,
         fontWeight: 900,
     },
+    namePlusRandom: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
     genderBox: {
         flex: 2,
     },

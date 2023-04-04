@@ -9,7 +9,7 @@ const Career = (props) => {
     return (
         <ScrollView style={styles.scrollContainer}>
             <View style={styles.headerContainer}>
-                <Text style={styles.headerText}>Identity</Text>
+                <Text style={styles.headerText}>Education</Text>
             </View>
         <Text>more Text</Text>
         <Text>more Text</Text>

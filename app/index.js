@@ -14,7 +14,7 @@ export default function Page() {
   const [startLife, setStartLife] = useState(false);
 
   // For <NewLife />
-  const [firstName, onChangeFirst] = useState('Kanan');
+  const [firstName, onChangeFirst] = useState('');
   const [lastName, onChangeLast] = useState('');
   const [isMale, setMale] = useState(false);
   const [isFemale, setFemale] = useState(false);

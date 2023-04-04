@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, Image, Pressable, StatusBar } from "react-native";
 import { Link, Stack, useRouter } from "expo-router";
 import { styles } from "./newlife.style";
+import { generateName } from '../generateName';
 
 const Newlife = (props) => {
 
@@ -38,6 +39,12 @@ const Newlife = (props) => {
     const openMain = () => {
         props.start((start) => start = true)
     }
+    const generateFirstName = () => {
+        props.onChangeFirst(generateName());
+    }
+    const generateLastName = () => {
+        props.onChangeLast(generateName());
+    }
 
     return (
     <View style={styles.container} >
@@ -53,9 +60,17 @@ const Newlife = (props) => {
         />
         <View style={styles.nameBox}>
             <View>
-                <Text style={styles.h3}>
-                    First Name 🧑
-                </Text>
+                <View style={styles.namePlusRandom}>
+                    <Text style={styles.h3}>
+                        First Name 🧑
+                    </Text>
+                    <Pressable onPress={generateFirstName}>
+                        <Image style={{
+                        width: 35,
+                        height: 35,
+                    }} source = {require('../icons/random-icon.png')} />
+                    </Pressable>
+                </View>
                 <TextInput 
                     style={styles.input}
                     onChangeText={props.onChangeFirst}
@@ -65,9 +80,17 @@ const Newlife = (props) => {
                 />
             </View>
             <View>
-                <Text style={styles.h3}>
-                    Last Name 🌳
-                </Text>
+                <View style={styles.namePlusRandom}>
+                    <Text style={styles.h3}>
+                        Last Name 🌳
+                    </Text>
+                    <Pressable onPress={generateLastName}>
+                        <Image style={{
+                        width: 35,
+                        height: 35,
+                    }} source = {require('../icons/random-icon.png')} />
+                    </Pressable>
+                </View>
                 <TextInput 
                     style={styles.input}
                     onChangeText={props.onChangeLast}
